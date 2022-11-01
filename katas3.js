@@ -24,7 +24,7 @@ function vowelsCounter(array) {
         let frutas = array[i];
         let contVogais = 0;
         for (let v = 0; v < frutas.length; v++) {
-            let frutasVogais = frutas[v];
+            let frutasVogais = frutas[v].toLowerCase();
 
             if (frutasVogais == "a") {
                 contVogais++
@@ -80,6 +80,7 @@ console.log(stringTripletGroup("Os três mosqueteiros"));
 
 function dominantPet(array) {
 
+    let contatenacao = ""
     let contCat = 0;
     let contDog = 0;
     for (let i = 0; i < array.length; i++) {
@@ -93,14 +94,15 @@ function dominantPet(array) {
     };
 
     if (contCat === contDog) {
-        console.log(`"DRAW!"`)
+        contatenacao += (`"DRAW!"`)
     } else if (contDog > contCat) {
-        console.log(`"DOG!"`)
+        contatenacao += (`"DOG!"`)
     } else {
-        console.log(`"CAT!"`)
+        contatenacao += (`"CAT!"`)
     };
+    return contatenacao
 };
-dominantPet(["DoG", "cat", "cAT", "dOg", "cat", "Dog", "caT"]);
+console.log(dominantPet(["DoG", "cat", "cAT", "dOg", "cat", "Dog", "caT"]));
 
 
 // Exercicio 5 Completo //
@@ -163,7 +165,7 @@ console.log(changeLampStatus([false, false, true, false, true, true, true]));
 function gradeAverage(array) {
     let soma = 0;
     let cont = 0;
-    let conca = [];
+    let conca = "";
     for (let i = 0; i < array.length; i++) {
         let notas = array[i];
         soma += notas;
@@ -172,13 +174,14 @@ function gradeAverage(array) {
     let media = (soma / cont).toFixed(2);
 
     if (media >= 0.00 && media <= 10.00) {
-        console.log(`"A média das notas é: ${media}"`)
+        conca += (`"A média das notas é: ${media}"`)
     };
+    return conca
 };
-gradeAverage([6.0, 5.5, 6.7, 8.0, 10, 10, 7.1]);
+console.log(gradeAverage([6.0, 5.5, 6.7, 8.0, 10, 10, 7.1]));
 
 
-// Exercicio 9 Completo//
+// Exercicio 9 Incompleta //
 
 
 function canvasDeliveriesPercentage(array) {
