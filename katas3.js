@@ -181,29 +181,28 @@ function gradeAverage(array) {
 console.log(gradeAverage([6.0, 5.5, 6.7, 8.0, 10, 10, 7.1]));
 
 
-// Exercicio 9 Incompleta //
+// Exercicio 9 Completo //
 
 
 function canvasDeliveriesPercentage(array) {
 
     let soma = 0;
     let cont = 0;
-   
+    let conca = "";
     for (let i = 0; i < array.length; i++) {
         let notas = array[i];
-        soma += notas / 10
+        soma += notas;
         cont++;
     };
-    let porcentagem = (soma * cont).toFixed(2);
+    let media = (soma / cont).toFixed(2);
 
-    if (porcentagem >= 0.00 && porcentagem <= 100.00) {
-        console.log(`"A média das notas é: ${porcentagem}%"`)
-    } else {
-        console.log("valor de notas acima do permitido")
-    }
+    if (media >= 0.00 && media <= 10.00) {
+        conca += (`"A média das notas é: ${media}%"`)
+    };
+    return conca
     
 };
-canvasDeliveriesPercentage([3, 9.5, 6, 8, 10, 10, 7.1, 8.5, 2.3, 6.7]);
+console.log(canvasDeliveriesPercentage([3, 9.5, 6, 8, 10, 10, 7.1, 8.5, 2.3, 6.7]));
 
 
 // Exercicio 10 Completo //
